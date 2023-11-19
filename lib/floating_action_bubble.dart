@@ -8,6 +8,7 @@ class Bubble {
     required this.bubbleColor,
     required this.icon,
     required this.onPress,
+    required this.icon_size
   });
 
   final IconData icon;
@@ -16,6 +17,7 @@ class Bubble {
   final void Function() onPress;
   final String title;
   final TextStyle titleStyle;
+  final double icon_size;
 }
 
 class BubbleMenu extends StatelessWidget {
@@ -41,6 +43,7 @@ class BubbleMenu extends StatelessWidget {
           Icon(
             item.icon,
             color: item.iconColor,
+            size: icon_size
           ),
           const SizedBox(
             width: 10.0,
@@ -71,6 +74,7 @@ class FloatingActionBubble extends AnimatedWidget {
     required Animation animation,
     this.heroTag,
     this.iconData,
+    this.icon_size,
     this.animatedIconData,
   })  : assert((iconData == null && animatedIconData != null) ||
             (iconData != null && animatedIconData == null)),
@@ -82,6 +86,7 @@ class FloatingActionBubble extends AnimatedWidget {
   final Object? heroTag;
   final IconData? iconData;
   final Color iconColor;
+  final double icon_size;
   final Color backGroundColor;
 
   get _animation => listenable;
