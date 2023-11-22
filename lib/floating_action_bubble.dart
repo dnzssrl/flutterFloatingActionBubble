@@ -126,8 +126,8 @@ class FloatingActionBubble extends AnimatedWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        IgnorePointer(
-          ignoring: _animation.value == 0,
+        Visibility(
+          visible: _animation.value != 0,
           child: ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
